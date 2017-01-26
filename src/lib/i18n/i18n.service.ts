@@ -4,7 +4,7 @@
 
 import { Injectable } from '@angular/core';
 
-import { Translation } from './Translation.model';
+import { Translation } from './translation.model';
 
 
 @Injectable()
