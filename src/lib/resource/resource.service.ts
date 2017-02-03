@@ -27,7 +27,7 @@ export class ResourceService {
   protected tempUrl: string;
 
   constructor(
-    private injector: Injector
+    protected injector: Injector
   ) {
     this.http = this.injector.get(Http);
     this.lang = this.injector.get(I18nService);
