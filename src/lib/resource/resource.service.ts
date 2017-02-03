@@ -184,7 +184,9 @@ export class ResourceService {
     } else {
       return this.http[method](this.urlPrefix + url, data, options)
         .timeout(this.timeout)
-        .map(this.extractData)
+        .map((res) => {
+          return this.extractData(res);
+        })
         .catch(this.handleError.bind(this));
     }
   }
