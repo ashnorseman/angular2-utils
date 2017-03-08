@@ -20,7 +20,7 @@ export class ResourceService {
   protected http: Http;
   protected lang: I18nService;
 
-  protected timeout: number = 20000;
+  protected timeout: number = 60 * 1000;
   protected urlPrefix: string = '';
 
   protected url: string;
