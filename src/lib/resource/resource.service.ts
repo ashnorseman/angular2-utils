@@ -14,7 +14,9 @@ import { I18nService } from '../i18n/i18n.service';
  */
 export class ResourceService {
   private headers: Headers = new Headers({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache'
   });
 
   protected http: Http;
@@ -111,12 +113,12 @@ export class ResourceService {
     headers: Headers,
     search: URLSearchParams
   } {
-    if (!params) { return null; }
-
     const searchParams = new URLSearchParams();
 
-    for (let key of Object.keys(params)) {
-      searchParams.set(key, params[key]);
+    if (params) {
+      for (let key of Object.keys(params)) {
+        searchParams.set(key, params[key]);
+      }
     }
 
     return {
