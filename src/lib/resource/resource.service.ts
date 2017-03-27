@@ -85,7 +85,7 @@ export class ResourceService {
   }
 
   // show error message
-  protected showErrorMessage(message: string) {
+  protected showErrorMessage(message: string, error: Response) {
     alert(message);
   }
 
@@ -154,8 +154,8 @@ export class ResourceService {
       }
     }
 
-    this.showErrorMessage(parsedMessage);
-    throw Observable.throw(parsedMessage);
+    this.showErrorMessage(parsedMessage, error);
+    throw Observable.throw(parsedMessage, error);
   }
 
   // replace params in url
